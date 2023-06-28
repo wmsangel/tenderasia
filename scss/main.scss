@@ -1,0 +1,209 @@
+@import "ui/vars";
+@import "ui/grid";
+@import "ui/buttons";
+@import "ui/icons";
+@import "ui/form";
+@import "ui/site-elements";
+@import "ui/popup";
+@import "ui/fonts";
+
+// blocks
+@import "blocks/header";
+@import "blocks/hero";
+@import "blocks/tenders";
+@import "blocks/tender-item.scss";
+@import "blocks/footer";
+@import "blocks/mobile-sidebar";
+@import "blocks/register";
+@import "blocks/_paggination";
+@import "blocks/profile";
+@import "blocks/tender-full";
+@import "blocks/404";
+ 
+//pages
+@import "pages/pages";
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+html {
+    height: -webkit-fill-available;
+}
+
+:root {
+    --app-height: 100%;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: $color_black;
+    background: #F8F8F8;
+
+    &.homepage {
+        background: #fff;
+    }
+
+    @media (max-width: 767px) {
+        padding-bottom: 66px;
+
+        &.has-mobile-btn {
+            padding-bottom: 140px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .tenders {
+            margin-top: -46px;
+            border-radius: 6px;
+        }
+    }
+}
+
+.container {
+    max-width: 1188px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+a {
+    color: $color_black;
+}
+
+button,
+textarea,
+input {
+    font-family: inherit;
+}
+
+*:before,
+*:after,
+* {
+    box-sizing: border-box;
+}
+
+.h1-title,
+h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: $color_black;
+
+    @media (max-width: 767px) {
+        font-size: 40px;
+    }
+}
+
+.h2-title,
+h2 {
+    font-size: 28px;
+    line-height: 140%;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    color: #3C3744;
+    line-height: 140%;
+}
+
+.tender-title {
+    font-size: 28px;
+    line-height: 140%;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    color: #3C3744;
+    line-height: 140%;
+
+    @media (max-width: 767px) {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+}
+
+.title-bordered {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #EFEFF0;
+}
+
+.mobile-only {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.desktop-only {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+
+
+/********************************************************* Mobile */
+.mobile-btn-save {
+    width: 100%;
+    padding: 16px;
+    position: fixed;
+    bottom: 66px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+
+    .btn {
+        width: 100%;
+    }
+}
+
+
+
+
+
+/********************************************************* UL */
+.custom-ul {
+    padding-left: 0;
+    margin: 4px 0 0 0;
+    li {
+        margin: 4px 0;
+        list-style: none;
+        padding-left: 16px;
+        position: relative;
+        &:before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: #000;
+            border-radius: 100%;
+            position: absolute;
+            top: 9px;
+            left: 4px;
+        }
+    }
+}
+
+
+
+.profile-page {
+    .inner-page {
+        .sidebar,
+        main {
+            height: calc(100vh - 160px);
+            @media (max-width: 992px) {
+                height: auto;
+            }
+        }
+    }
+}
+
+div#ui-datepicker-div {
+    z-index: 999999 !important;
+}
+
+
+/********************************************************* Options */
+.o-mb-30 {
+    margin-bottom: 30px !important;
+}

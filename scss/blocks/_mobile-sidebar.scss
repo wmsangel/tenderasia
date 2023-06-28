@@ -1,0 +1,55 @@
+.mobile-sidebar {
+    display: none;
+    @media (max-width: 767px) {
+        display: flex;
+        position: fixed;
+        background: #FFFFFF;
+        border-top: 1px solid #EFEFF0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 12px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 100;
+
+        a {
+            color: $color_gray;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 500;
+            width: calc(100% / 4);
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+
+            .icon {
+                width: 20px;
+                height: 24px;
+            }
+
+            &.is-selected {
+                color: $color_blue;
+
+                .icon--no-selected {
+                    display: none;
+                }
+
+                .icon--selected {
+                    display: inline-flex;
+                }
+            }
+
+            .icon--selected {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 349px) {
+        gap: 24px;
+    }
+}

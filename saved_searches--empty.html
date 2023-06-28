@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tender.asia</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/main.css?v30">
+
+</head>
+<body class="has-mobile-btn sidebar-wo-footer is-tenders-list">
+
+    <header>
+        <div class="header-secondary">
+            <div class="header-secondary__sidebar">
+                <a href="index.html"><img src="img/logo.svg" alt="Tender.asia"></a>
+            </div>
+            <div class="header-secondary__main">
+                
+                <div class="header-secondary__search">
+                    <form action="">
+                        <input type="text" class="header-search" placeholder="Товар, услуга или заказчик">
+                    </form>
+                </div>
+
+                <div class="header-secondary__menu">
+                    <a href="saved_purchases.html">Избранное</a>
+                    <a href="saved_searches.html" class="is-selected">Шаблоны</a>
+                </div>
+
+                <div class="header-secondary__icons">
+                    <a href="#" class="js-language"><img src="img/icons/language.svg" alt=""></a>
+                    <div class="language-dropdown js-language-list">
+                        <a href="#" class="is-selected">Русский</a>
+                        <a href="#">English</a>
+                        <a href="#">Ўзбекча</a>
+                    </div>
+                    <a href="profile.html" class="header__profile"><img src="img/icons/profile.svg" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="inner-page">
+
+        <div class="mobile-search">
+            <div class="mobile-search__title">Шаблоны поиска</div>
+            <form action="">
+                <input type="text" class="header-search" placeholder="Найти шаблон">
+            </form>
+        </div>
+
+        <aside class="sidebar js-sidebar">
+            <a href="#" class="btn btn-blue-gradient btn--w-icon save-search-btn js-popup-link" data-popup-id="auth">
+                <span class="icon icon-notify"></span>
+                Хочу получать уведомления
+            </a>
+
+            <div class="user-profile-info">
+                <div class="user-profile-info__name">Профиль</div>
+                <div class="user-profile-info__value">adiba@gmail.com</div>
+                <div class="user-profile-info__id">ID 978543945</div>
+            </div>
+            
+        </aside>
+    
+        <main>
+            <section class="section-tenders">
+                <div class="tenders">
+                    <div class="tenders__search is-saved-searches">
+                        <form action="">
+                            <input type="text" placeholder="Найти шаблон">
+                        </form>
+                    </div>
+                    <div class="tenders__empty">
+                        <div class="tenders__empty-title">У вас нет сохраненных поисков</div>
+                        <div class="tenders__empty-btn"><a href="index.html" class="btn btn-blue">Искать закупки</a></div>
+                    </div>
+                    <div class="mobile-btn-save mobile-only">
+                        <a href="#" class="btn btn-blue-gradient btn--w-icon save-search-btn js-popup-link" data-popup-id="auth">
+                            <span class="icon icon-notify"></span>
+                            Хочу получать уведомления
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    
+    </div>
+    
+    <div class="mobile-sidebar">
+        <a href="serp-logged.html">
+            <span class="icon icon-s-search icon--no-selected"></span>
+            <span class="icon icon-s-search-blue icon--selected"></span>
+            Поиск
+        </a>
+
+        <a href="saved_purchases.html">
+            <span class="icon icon-s-star icon--no-selected"></span>
+            <span class="icon icon-star-blue icon--selected"></span>
+            Избранное
+        </a>
+
+        <a href="saved_searches.html" class="is-selected">
+            <span class="icon icon-s-template icon--no-selected"></span>
+            <span class="icon icon-s-template-blue icon--selected"></span>
+            Шаблоны
+        </a>
+
+        <a href="profile.html">
+            <span class="icon icon-s-profile icon--no-selected"></span>
+            <span class="icon icon-s-profile-blue icon--selected"></span>
+            Профиль
+        </a>
+    </div>
+
+    <div class="site-messages js-site-msgs">
+        <div class="site-message-item">
+            <span>Поиск добавлен в «Шаблоны»</span>
+            <a href="#" class="js-close-site-message site-message-item__close">
+                <span class="icon icon-close"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="popup popup--small js-popup" data-popup-id="auth">
+        <a href="#" class="popup__close js-popup-close"><span class="icon icon-close"></span></a>
+        <div class="popup__title">Вход или регистрация</div>
+        <div class="popup__content">
+
+            <div class="auth-steps js-auth-steps js-auth-step-1 is-active">
+                Войдите, чтобы
+                <ul class="custom-ul">
+                    <li>просматривать закупки</li>
+                    <li>сохранять интересующие закупки и поиски</li>
+                    <li>получать уведомления</li>
+                </ul>
+
+                <div class="auth-btns">
+                    <a href="#" class="btn btn-white btn-telegram btn--w-icon">
+                        <span class="icon icon-telegram-color"></span>
+                        Войти через Telegram
+                    </a>
+
+                    <a href="#" class="btn btn-clean js-auth-login">Войти через email</a>
+
+                    <!-- a href="#" class="btn btn-clean js-auth-register">У меня нет Telegram / Регистрация</a -->
+                </div>
+
+            </div>
+
+            <div class="auth-steps js-auth-steps js-auth-step-auth-1">
+                <form action="" class="js-auth-login-form">
+                    <div class="field-group" data-group="1">
+                        <div class="field">
+                            <label for="auth-email">Email</label>
+                            <input type="email" placeholder="Введите почту" class="field__text" id="auth-email">
+                        </div>
+                    </div>
+                    <div class="field-group field-action" data-group="1">
+                        <div class="field">
+                            <a href="#" class="btn btn-blue js-auth-login-password" disabled>Продолжить</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-auth-step-auth-2">
+                <form action="" class="js-auth-login-form-password">
+                    <div class="field-group" data-group="1">
+                        <div class="field">
+                            <label for="auth-password">Пароль</label>
+                            <input type="password" placeholder="Введите пароль" class="field__text js-field-pass" id="auth-password">
+                            <div class="field-annotaion">
+                                <a href="#" class="c-link js-password-recovery">Не помните пароль?</a>
+                            </div>
+                            <a href="#" class="js-show-hide-password show-hide-pass"></a>
+                        </div>
+                    </div>
+                    <div class="field-group field-action" data-group="1">
+                        <div class="field">
+                            <a href="index.html" class="btn btn-blue js-auth-login-finish" disabled>Продолжить</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-password-recovery-1">
+                Ссылка для изменения пароля отправлена
+                на почту <strong>adiba@gmail.com</strong>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-reg-step-1">
+                <form action="" class="js-reg-form">
+                    <div class="field-group" data-group="1">
+                        <div class="field">
+                            <label for="reg-email">Email</label>
+                            <input type="email" placeholder="Введите почту" class="field__text" id="reg-email">
+                        </div>
+                    </div>
+                    <div class="field-group field-action" data-group="1">
+                        <div class="field">
+                            <a href="#" class="btn btn-blue js-reg-password" disabled>Продолжить</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-reg-step-2">
+                <form action="" class="js-reg-form-password">
+                    <div class="field-group" data-group="1">
+                        <div class="field">
+                            <label for="reg-password">Пароль</label>
+                            <input type="email" placeholder="Установить пароль" class="field__text" id="reg-password">
+                        </div>
+                    </div>
+                    <div class="field-group field-action" data-group="1">
+                        <div class="field">
+                            <a href="#" class="btn btn-blue js-reg-finish" disabled>Продолжить</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-reg-step-3">
+                Спасибо за регистрацию.
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="popup popup--small js-popup" data-popup-id="remove-saved-searches">
+        <a href="#" class="popup__close js-popup-close"><span class="icon icon-close"></span></a>
+        <div class="popup__title">Удалить поиск?</div>
+        <div class="popup__content">
+            
+        </div>
+        <div class="popup__btns">
+            <a href="#" class="js-popup-close js-remove-saved-searches btn btn-blue">Удалить</a>
+            <a href="#" class="js-popup-close btn btn-white">Отмена</a>
+        </div>
+    </div>
+    <div class="popup-overlay js-popup-close"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="js/main.js?v30"></script>
+</body>
+</html>

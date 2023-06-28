@@ -1,0 +1,59 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.col {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.col-12 {
+    width: calc(100% - 24px);
+}
+
+.col-11 {
+    width: calc(((100% / 12) * 11) - 24px);
+}
+
+.col-10 {
+    width: calc(((100% / 12) * 10) - 24px);
+}
+
+.col-9 {
+    width: calc(((100% / 12) * 9) - 24px);
+}
+
+.col-8 {
+    width: calc(((100% / 12) * 8) - 24px);
+}
+
+.col-7 {
+    width: calc(((100% / 12) * 7) - 24px);
+}
+
+.col-6 {
+    width: calc(((100% / 12) * 6) - 24px);
+}
+
+.col-5 {
+    width: calc(((100% / 12) * 5) - 24px);
+}
+
+.col-4 {
+    width: calc(((100% / 12) * 4) - 24px);
+}
+
+.col-3 {
+    width: calc(((100% / 12) * 3) - 24px);
+}
+
+.col-2 {
+    width: calc(((100% / 12) * 2) - 24px);
+}
+
+.col-1 {
+    width: calc(((100% / 12) * 1) - 24px);
+}

@@ -1,0 +1,246 @@
+.tender-sidebar-info {
+    border-top: 1px solid #EFEFF0;
+    margin-top: 24px;   
+    padding-top: 24px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    &__title {
+        font-weight: 400;
+        font-size: 14px;
+        color: #9E9BA1;
+    }
+
+    &__value {
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 16px;
+ 
+        &.is-company-name {
+            font-weight: 500; 
+            font-size: 18px;
+            color: #3C3744;
+            letter-spacing: -0.005em;
+            border-bottom: 1px solid #EFEFF0;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.tender {
+    background: #fff;
+    border-radius: 6px;
+    padding: 24px;
+
+    @media (max-width: 767px) {
+        padding: 16px;
+    }
+}
+
+.tender-field-title {
+    font-weight: 400;
+    font-size: 14px;
+    color: #9E9BA1;
+    margin-bottom: 2px;
+
+    &.is-bigger {
+        margin-bottom: 16px;
+        font-weight: 500;
+        font-size: 18px;
+        color: #3C3744;
+    }
+
+    @media (max-width: 767px) {
+        &:after {
+            content: ':';
+        }
+        padding-right: 4px;
+    }
+}
+
+.tender-auction {
+    @media (max-width: 767px) {
+        margin: 16px 0;
+    }
+}
+
+.tender-field-info {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.is-short {
+    max-width: 990px;
+}
+
+.tender-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid #EFEFF0;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+
+    &[data-blocks="4"] {
+        .tender-info-item {
+            width: calc((100% / 4) - 24px);
+
+            @media (max-width: 767px) {
+                width: calc((100% / 2) - 16px);
+            }
+        }
+    }
+
+    &[data-blocks="3"] {
+        .tender-info-item {
+            width: calc((100% / 3) - 24px);
+
+            @media (max-width: 767px) {
+                width: calc((100% / 2) - 16px);
+            }
+        }
+    }
+
+    &[data-blocks="3-in-1"] {
+        .tender-info-item {
+            width: calc(100% - 24px - (25% - 24px));
+
+            @media (max-width: 767px) {
+                width: calc(100% - 16px);
+            }
+        }
+    }
+
+    &[data-blocks="1"] {
+        .tender-info-item {
+            width: calc((100% / 1));
+
+            @media (max-width: 767px) {
+                width: calc((100% / 1));
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        gap: 16px;
+    }
+}
+
+.tender-field-files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    a {
+        background: url('../img/icons/docx.svg') #fff no-repeat 24px 50%;
+        width: calc((100% / 4) - 16px);
+        min-height: 88px;
+        padding: 24px 24px 24px 80px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #EFEFF0;
+        border-radius: 4px;
+        transition: all .2s ease;
+        font-weight: 500;
+        font-size: 14px;
+        &:hover {
+            background-color: #F8F8F8;
+        }
+
+        @media (max-width: 992px) {
+            width: calc((100% / 2) - 16px);
+        } 
+
+        @media (max-width: 767px) {
+            width: 100%;
+            min-height: 72px;
+        } 
+    }
+}
+
+.objects {
+    background: #fff;
+    border-radius: 6px;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.object-item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 24px;
+    gap: 24px;
+
+    &:not(:last-child) {
+        padding-bottom: 24px;
+        border-bottom: 1px solid #EFEFF0;
+    }
+
+    &__description-text {
+        font-size: 14px;
+        line-height: 1.5;
+
+        p {
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            margin-top: 12px;
+        }
+    }
+    
+    &__title {
+        width: 100%;
+        font-weight: 500;
+        font-size: 18px;
+
+        @media (max-width: 767px) {
+            padding-bottom: 12px;
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        padding-top: 16px;
+        gap: 0;
+    }
+}
+
+.object-item__info {
+    width: calc((100% / 4) - 24px);
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media (max-width: 767px) {
+        width: 100%; 
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 4px;
+        flex-direction: unset;
+    }
+}
+
+.go-back-mobile {
+    .icon {
+        width: 12px;
+        height: 19px;
+    }
+}

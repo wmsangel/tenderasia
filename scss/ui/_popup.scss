@@ -1,0 +1,207 @@
+body {
+    &.is-popup-opened {
+        overflow: hidden;
+        height: 100vh;
+        .popup.is-opened {
+            display: block;
+            animation-duration: .2s;
+            animation-timing-function: ease-in-out;
+            animation-delay: .05s;
+            animation-name: showPopup;
+            animation-fill-mode: forwards;
+        }
+
+        .popup-overlay {
+            display: block;
+            animation-duration: .2s;
+            animation-timing-function: ease-in-out;
+            animation-delay: .05s;
+            animation-name: showMask;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    &.is-popup-closed {
+        .popup.is-opened {
+            display: block;
+            animation-duration: .2s;
+            animation-timing-function: ease-in-out;
+            animation-delay: .05s;
+            animation-name: hidePopup;
+            animation-fill-mode: forwards;
+            opacity: 1;
+        }
+
+        .popup-overlay {
+            display: block;
+            animation-duration: .2s;
+            animation-timing-function: ease-in-out;
+            animation-delay: .05s;
+            animation-name: hideMask;
+            animation-fill-mode: forwards;
+            opacity: 1;
+        }
+    }
+}
+
+.popup {
+    display: none;
+    border-radius: 4px;
+    background: #fff;
+    padding: 24px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 1000;
+    transition: all .5s ease;
+
+    &--small {
+        width: 400px;
+
+        @media (max-width: 420px) {
+            width: 98vw;
+            top: 1vw;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 18px;
+        padding-right: 30px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #EFEFF0;
+    }
+
+    &__close {
+        position: absolute;
+        top: 21px;
+        right: 14px;
+        font-size: 0;
+        padding: 10px;
+        transition: all .2s ease;
+
+        &:hover {
+            opacity: .75;
+        }
+
+        @media (max-width: 420px) {
+            top: 16px;
+            right: 16px;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        .btn {
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+        }
+
+        &.is-compact {
+            justify-content: flex-end;
+            border-top: 1px solid #EFEFF0;
+            padding-top: 12px;
+            .btn {
+                width: auto;
+                margin-left: 12px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media (max-width: 420px) {
+        padding: 16px;
+    }
+
+    &__content {
+        margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        top: auto;
+        transform: translate(0, 0);
+        border-radius: 4px 4px 0 0;
+        &__content {
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        &.is-filter-popup {
+            height: calc(100vh - 40px);
+            height: calc(var(--app-height) - 40px);
+            top: 40px;
+            .popup__content {
+                height: calc(100vh - 180px);
+                height: calc(var(--app-height) - 180px);
+                max-height: inherit;
+                margin-top: 0;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+.popup-overlay {
+    background: rgba(0,0,0,.75);
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    opacity: 0;
+}
+
+@keyframes showPopup {
+    0% {
+        opacity: 0;
+        margin-top: 100px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+} 
+
+@keyframes showMask {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} 
+
+@keyframes hidePopup {
+    0% {
+        opacity: 1;
+        margin-top: 0;
+    }
+    100% {
+        opacity: 0;
+        margin-top: 100px;
+    }
+} 
+
+@keyframes hideMask {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+} 

@@ -1,0 +1,48 @@
+.register-block {
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+
+    &__info {
+        width: 320px;
+
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+    }
+
+    &__img {
+        width: calc(100% - 320px);
+
+        img {
+            width: 100%;
+            opacity: .8;
+        }
+
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    &__tag {
+        font-weight: 500;
+        font-size: 11px;
+        color: $color_blue;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 40px;
+        margin-top: 8px;
+    }
+
+    &__text {
+        margin-top: 16px;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    &__btn {
+        margin-top: 40px;
+    }
+}

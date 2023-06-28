@@ -1,0 +1,128 @@
+.icon {
+    display: inline-flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .2s ease;
+
+    &.icon-telegram-color {
+        width: 21px;
+        height: 20px;
+        background-image: url('../img/icons/telegram-color.svg');
+    }
+
+    &.icon-eye {
+        width: 19px;
+        height: 13px;
+        background-image: url('../img/icons/eye.svg');
+    }
+
+    &.icon-bell {
+        width: 14px;
+        height: 17px;
+        background-image: url('../img/icons/bell.svg');
+    }
+
+    &.icon-close {
+        width: 14px;
+        height: 14px;
+        background-image: url('../img/icons/close.svg');
+    }
+
+    &.icon-telegram {
+        width: 20px;
+        height: 20px;
+        background-image: url('../img/icons/telegram.svg');
+    }
+
+    &.icon-notify {
+        width: 14px;
+        height: 12px;
+        background-image: url('../img/icons/notify.svg');
+    }
+
+    &.icon-mail {
+        width: 20px;
+        height: 20px;
+        background-image: url('../img/icons/mail.svg');
+    }
+
+    &.icon-settings {
+        width: 20px;
+        height: 19px;
+        background-image: url('../img/icons/settings.svg');
+    }
+
+    &.icon-s-search {
+        width: 25px;
+        height: 25px;
+        background-image: url('../img/icons/sidebar-search.svg');
+    }
+
+    &.icon-s-search-blue {
+        width: 25px;
+        height: 25px;
+        background-image: url('../img/icons/sidebar-search-blue.svg');
+    }
+
+    &.icon-s-star {
+        width: 25px;
+        height: 25px;
+        background-image: url('../img/icons/sidebar-star.svg');
+    }
+
+    &.icon-s-template {
+        width: 25px;
+        height: 25px;
+        background-image: url('../img/icons/sidebar-template.svg');
+    }
+
+    &.icon-s-template-blue {
+        width: 25px;
+        height: 25px;
+        background-image: url('../img/icons/sidebar-template-blue.svg');
+    }
+
+    &.icon-s-profile {
+        width: 25px;
+        height: 25px;
+        background-image: url('../img/icons/sidebar-profile.svg');
+    }
+
+    &.icon-s-profile-blue {
+        width: 25px;
+        height: 25px;
+        background-image: url('../img/icons/sidebar-profile-blue.svg');
+    }
+
+    &.icon-star-white {
+        width: 17px;
+        height: 17px;
+        background-image: url('../img/icons/star-white.svg');
+    }
+
+    &.icon-star-blue {
+        width: 20px;
+        height: 19px;
+        background-image: url('../img/icons/star.svg');
+    }
+
+    &.icon-arrow-left {
+        width: 9px;
+        height: 16px;
+        background-image: url('../img/icons/arrow-left.svg');
+
+        &:hover {
+            background-image: url('../img/icons/arrow-left--blue.svg');
+        }
+    }
+
+    &.icon-arrow-right {
+        width: 9px;
+        height: 16px;
+        background-image: url('../img/icons/arrow-right.svg');
+
+        &:hover {
+            background-image: url('../img/icons/arrow-right--blue.svg');
+        }
+    }
+}

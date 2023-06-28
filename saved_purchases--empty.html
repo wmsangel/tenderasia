@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tender.asia</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/main.css?v30">
+
+</head>
+<body class="has-mobile-btn sidebar-wo-footer is-tenders-list">
+
+    <header>
+        <div class="header-secondary">
+            <div class="header-secondary__sidebar">
+                <a href="index.html"><img src="img/logo.svg" alt="Tender.asia"></a>
+            </div>
+            <div class="header-secondary__main">
+                
+                <div class="header-secondary__search">
+                    <form action="">
+                        <input type="text" class="header-search" placeholder="Товар, услуга или заказчик">
+                    </form>
+                </div>
+
+                <div class="header-secondary__menu">
+                    <a href="saved_purchases.html" class="is-selected">Избранное</a>
+                    <a href="saved_searches.html">Шаблоны</a>
+                </div>
+
+                <div class="header-secondary__icons">
+                    <a href="#" class="js-language"><img src="img/icons/language.svg" alt=""></a>
+                    <div class="language-dropdown js-language-list">
+                        <a href="#" class="is-selected">Русский</a>
+                        <a href="#">English</a>
+                        <a href="#">Ўзбекча</a>
+                    </div>
+                    <a href="profile.html" class="header__profile"><img src="img/icons/profile.svg" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="inner-page">
+
+        <div class="mobile-search">
+            <div class="mobile-search__title">Избранные закупки</div>
+            <form action="">
+                <input type="text" class="header-search" placeholder="Название, лот, организатор">
+                <a href="#" class="js-popup-link" data-popup-id="filter">
+                    <span class="icon icon-settings"></span>
+                </a>
+            </form>
+        </div>
+
+        <aside class="sidebar js-sidebar">
+            <a href="#" class="btn btn-blue-gradient btn--w-icon save-search-btn js-popup-link" data-popup-id="auth">
+                <span class="icon icon-notify"></span>
+                Хочу получать уведомления
+            </a>
+
+            <form class="filter-form">
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="country">Страна</label>
+                        <select name="country" id="country" class="field__select js-select" data-placeholder="Выберите страну">
+                            <option></option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="region">Регион</label>
+                        <select name="country" id="region" class="field__select js-select" data-placeholder="Выберите регион">
+                            <option></option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <div class="field__label">Тип конкурса</div>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="1">
+                            Открытый 
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="2">
+                            С ограниченным участием
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="3">
+                            Аукцион
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="4">
+                            Запрос котировок
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field-group " data-group="1">
+                    <div class="field">
+                        <label for="source">Источник</label>
+                        <select name="source" id="source" class="field__select js-select" data-placeholder="Выберите источник">
+                            <option></option>
+                            <option value="xarid">xarid.uzex.uz</option>
+                            <option value="etender">etender.uzex.uz</option>
+                            <option value="xt-xarid">xt-xarid.uz</option>
+                            <option value="tender">tender.mc.uz</option>
+                            <option value="Beeline">Beeline</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Сумма (UZS)</label>
+                        <div class="field__price-group">
+                            <input type="number" placeholder="От" class="field__text" numeric step="0.1" inputmode="numeric" digitOnly maxlength="6" formControlName="resultInput" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                            <input type="number" placeholder="До" class="field__text" numeric step="0.1" inputmode="numeric" digitOnly maxlength="6" formControlName="resultInput" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Дата публикации</label>
+                        <div class="field__price-group">
+                            <input type="text" placeholder="От" class="field__text js-date-from" readonly>
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                            <input type="text" placeholder="До" class="field__text js-date-to" readonly>
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Дата завершения</label>
+                        <div class="field__price-group">
+                            <input type="text" placeholder="От" class="field__text js-date-2-from" readonly>
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                            <input type="text" placeholder="До" class="field__text js-date-2-to" readonly>
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="company-name">Заказчик</label>
+                        <input type="text" class="field__text" id="company-name" placeholder="Название или ИНН">
+                    </div>
+                </div>
+
+                <div class="field-group field-action is-last" data-group="1">
+                    <div class="field">
+                        <a href="#" class="btn btn-white js-popup-filter-reset">Сбросить фильтры</a>
+                    </div>
+                </div>
+
+                <div class="field-group field-action mobile-only" data-group="1">
+                    <div class="field field-action">
+                        <a href="#" class="btn btn-blue js-settings">Применить</a>
+                    </div>
+                </div>
+
+                <div class="field-group field-action mobile-only" data-group="1">
+                    <div class="field ">
+                        <a href="#" class="btn btn-gray js-settings">Закрыть</a>
+                    </div>
+                </div>
+
+            </form>
+        </aside>
+    
+        <main>
+            <section class="section-tenders">
+                <div class="tenders">
+                    <div class="tenders__search is-saved-searches">
+                        <form action="">
+                            <input type="text" placeholder="Искать в избранных закупках">
+                        </form>
+                    </div>
+                    <div class="tenders__empty">
+                        <div class="tenders__empty-title">У вас нет сохраненных закупок</div>
+                        <div class="tenders__empty-btn"><a href="index.html" class="btn btn-blue">Искать закупки</a></div>
+                    </div>
+                    <div class="mobile-btn-save mobile-only">
+                        <a href="#" class="btn btn-blue-gradient btn--w-icon save-search-btn js-popup-link" data-popup-id="auth">
+                            <span class="icon icon-notify"></span>
+                            Хочу получать уведомления
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+    </div>
+    
+
+    <footer class="inner-footer">
+        <div class="footer">
+            <div class="footer__links">
+                <a href="legal_user_agreement.html">Пользовательское соглашение</a>
+                <a href="legal_privacy_policy_and_terms_of_use.html">Политика конфиденциальности и условия использования</a>
+            </div>
+            <div class="footer__contact">
+                <a href="https://t.me/TenderAsiaSupport" target="_blank" class="btn btn-gray">
+                    <span class="icon icon-telegram"></span>
+                    Написать в Telegram
+                </a>
+                <a href="mailto:contact@tender.asia" class="btn btn-gray btn--w-icon">
+                    <span class="icon icon-mail"></span>
+                    Написать на почту
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-sidebar">
+        <a href="serp-logged.html">
+            <span class="icon icon-s-search icon--no-selected"></span>
+            <span class="icon icon-s-search-blue icon--selected"></span>
+            Поиск
+        </a>
+
+        <a href="saved_purchases.html" class="is-selected">
+            <span class="icon icon-s-star icon--no-selected"></span>
+            <span class="icon icon-star-blue icon--selected"></span>
+            Избранное
+        </a>
+
+        <a href="saved_searches.html">
+            <span class="icon icon-s-template icon--no-selected"></span>
+            <span class="icon icon-s-template-blue icon--selected"></span>
+            Шаблоны
+        </a>
+
+        <a href="profile.html">
+            <span class="icon icon-s-profile icon--no-selected"></span>
+            <span class="icon icon-s-profile-blue icon--selected"></span>
+            Профиль
+        </a>
+    </div>
+
+    <div class="site-messages js-site-msgs">
+        <div class="site-message-item">
+            <span>Поиск добавлен в «Шаблоны»</span>
+            <a href="#" class="js-close-site-message site-message-item__close">
+                <span class="icon icon-close"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="popup popup--small js-popup" data-popup-id="auth">
+        <a href="#" class="popup__close js-popup-close"><span class="icon icon-close"></span></a>
+        <div class="popup__title">Вход или регистрация</div>
+        <div class="popup__content">
+
+            <div class="auth-steps js-auth-steps js-auth-step-1 is-active">
+                Войдите, чтобы
+                <ul class="custom-ul">
+                    <li>просматривать закупки</li>
+                    <li>сохранять интересующие закупки и поиски</li>
+                    <li>получать уведомления</li>
+                </ul>
+
+                <div class="auth-btns">
+                    <a href="#" class="btn btn-white btn-telegram btn--w-icon">
+                        <span class="icon icon-telegram-color"></span>
+                        Войти через Telegram
+                    </a>
+
+                    <a href="#" class="btn btn-clean js-auth-login">Войти через email</a>
+
+                    <!-- a href="#" class="btn btn-clean js-auth-register">У меня нет Telegram / Регистрация</a -->
+                </div>
+
+            </div>
+
+            <div class="auth-steps js-auth-steps js-auth-step-auth-1">
+                <form action="" class="js-auth-login-form">
+                    <div class="field-group" data-group="1">
+                        <div class="field">
+                            <label for="auth-email">Email</label>
+                            <input type="email" placeholder="Введите почту" class="field__text" id="auth-email">
+                        </div>
+                    </div>
+                    <div class="field-group field-action" data-group="1">
+                        <div class="field">
+                            <a href="#" class="btn btn-blue js-auth-login-password" disabled>Продолжить</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-auth-step-auth-2">
+                <form action="" class="js-auth-login-form-password">
+                    <div class="field-group" data-group="1">
+                        <div class="field">
+                            <label for="auth-password">Пароль</label>
+                            <input type="password" placeholder="Введите пароль" class="field__text js-field-pass" id="auth-password">
+                            <div class="field-annotaion">
+                                <a href="#" class="c-link js-password-recovery">Не помните пароль?</a>
+                            </div>
+                            <a href="#" class="js-show-hide-password show-hide-pass"></a>
+                        </div>
+                    </div>
+                    <div class="field-group field-action" data-group="1">
+                        <div class="field">
+                            <a href="index.html" class="btn btn-blue js-auth-login-finish" disabled>Продолжить</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-password-recovery-1">
+                Ссылка для изменения пароля отправлена
+                на почту <strong>adiba@gmail.com</strong>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-reg-step-1">
+                <form action="" class="js-reg-form">
+                    <div class="field-group" data-group="1">
+                        <div class="field">
+                            <label for="reg-email">Email</label>
+                            <input type="email" placeholder="Введите почту" class="field__text" id="reg-email">
+                        </div>
+                    </div>
+                    <div class="field-group field-action" data-group="1">
+                        <div class="field">
+                            <a href="#" class="btn btn-blue js-reg-password" disabled>Продолжить</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-reg-step-2">
+                <form action="" class="js-reg-form-password">
+                    <div class="field-group" data-group="1">
+                        <div class="field">
+                            <label for="reg-password">Пароль</label>
+                            <input type="email" placeholder="Установить пароль" class="field__text" id="reg-password">
+                        </div>
+                    </div>
+                    <div class="field-group field-action" data-group="1">
+                        <div class="field">
+                            <a href="#" class="btn btn-blue js-reg-finish" disabled>Продолжить</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="auth-steps js-auth-steps js-reg-step-3">
+                Спасибо за регистрацию.
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="popup popup--small js-popup is-filter-popup" data-popup-id="filter">
+        <a href="#" class="popup__close js-popup-close"><span class="icon icon-close"></span></a>
+        <div class="popup__title">Фильтры</div>
+        <div class="popup__content">        
+            <form class="filter-form">
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="pcountry">Страна</label>
+                        <select name="country" id="pcountry" class="field__select js-select" data-placeholder="Выберите страну">
+                            <option></option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="pregion">Регион</label>
+                        <select name="country" id="pregion" class="field__select js-select" data-placeholder="Выберите регион">
+                            <option></option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <div class="field__label">Тип конкурса</div>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="1">
+                            Открытый 
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="2">
+                            С ограниченным участием
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="3">
+                            Аукцион
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="4">
+                            Запрос котировок
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="fsource">Источник</label>
+                        <select name="fsource" id="fsource" class="field__select js-select" data-placeholder="Выберите источник">
+                            <option></option>
+                            <option value="xarid">xarid.uzex.uz</option>
+                            <option value="etender">etender.uzex.uz</option>
+                            <option value="xt-xarid">xt-xarid.uz</option>
+                            <option value="tender">tender.mc.uz</option>
+                            <option value="Beeline">Beeline</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Сумма (UZS)</label>
+                        <div class="field__price-group">
+                            <input type="number" placeholder="От" class="field__text" numeric step="0.1" inputmode="numeric" digitOnly maxlength="6" formControlName="resultInput" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                            <input type="number" placeholder="До" class="field__text" numeric step="0.1" inputmode="numeric" digitOnly maxlength="6" formControlName="resultInput" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Дата публикации</label>
+                        <div class="field__price-group">
+                            <input type="text" placeholder="От" class="field__text js-date-from" readonly>
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                            <input type="text" placeholder="До" class="field__text js-date-to" readonly>
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Дата завершения</label>
+                        <div class="field__price-group">
+                            <input type="text" placeholder="От" class="field__text js-date-2-from" readonly>
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                            <input type="text" placeholder="До" class="field__text js-date-2-to" readonly>
+                            <a href="#" class="js-clear-input clear-input">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.05 13.65L0 12.6L5.775 6.825L0 1.05L1.05 0L6.825 5.775L12.6 0L13.65 1.05L7.875 6.825L13.65 12.6L12.6 13.65L6.825 7.875L1.05 13.65Z" fill="#9E9BA1"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="company-name">Заказчик</label>
+                        <input type="text" class="field__text" id="company-name" placeholder="Название или ИНН">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="popup__btns is-compact">
+            <a href="#" class="btn btn-white js-popup-filter-reset">Сбросить</a>
+            <a href="#" class="btn btn-blue js-popup-close">Показать</a>
+        </div>
+        
+    </div>
+
+    <div class="popup-overlay js-popup-close"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/main.js?v30"></script>
+</body>
+</html>

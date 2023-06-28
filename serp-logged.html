@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tender.asia</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/main.css?v10">
+
+</head>
+<body class="sidebar-wo-footer is-tenders-list">
+
+    <header>
+        <div class="header-secondary">
+            <div class="header-secondary__sidebar">
+                <a href="/"><img src="img/logo.svg" alt="Tender.asia"></a>
+            </div>
+            <div class="header-secondary__main">
+                
+                <div class="header-secondary__search">
+                    <form action="">
+                        <input type="text" class="header-search" placeholder="Товар, услуга или заказчик">
+                    </form>
+                </div>
+
+                <div class="header-secondary__menu">
+                    <a href="favorite.html">Избранное</a>
+                    <a href="saved-searches.html">Шаблоны</a>
+                </div>
+
+                <div class="header-secondary__icons">
+                    <a href="#" class="js-language"><img src="img/icons/language.svg" alt=""></a>
+                    <div class="language-dropdown js-language-list">
+                        <a href="#" class="is-selected">Русский</a>
+                        <a href="#">English</a>
+                        <a href="#">Ўзбекча</a>
+                    </div>
+                    <a href="profile.html" class="header__profile"><img src="img/icons/profile.svg" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="inner-page">
+
+        <div class="mobile-search">
+            <div class="mobile-search__title">Поиск закупок</div>
+            <form action="">
+                <input type="text" class="header-search" placeholder="Название, лот, организатор">
+                <a href="#" class="js-mobile-save-search-template">
+                    <span class="icon icon-star-blue"></span>
+                </a>
+                <a href="#" class="js-popup-link" data-popup-id="filter">
+                    <span class="icon icon-settings"></span>
+                </a>
+            </form>
+        </div>
+
+        <aside class="sidebar js-sidebar">
+            <a href="#" class="btn btn-blue btn--w-icon save-search-btn js-save-search-template">
+                <span class="icon icon-star-white"></span>
+                Сохранить шаблон поиска
+            </a>
+
+            <form class="filter-form">
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="country">Страна</label>
+                        <select name="country" id="country" class="field__select js-select" data-placeholder="Выберите страну">
+                            <option></option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="region">Регион</label>
+                        <select name="country" id="region" class="field__select js-select" data-placeholder="Выберите регион">
+                            <option></option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <div class="field__label">Тип конкурса</div>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="1">
+                            Открытый 
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="2">
+                            С ограниченным участием
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="3">
+                            Аукцион
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="4">
+                            Запрос котировок
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Сумма (UZS)</label>
+                        <div class="field__price-group">
+                            <input type="number" placeholder="От" class="field__text" numeric step="0.1" inputmode="numeric" digitOnly maxlength="6" formControlName="resultInput" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                            <input type="number" placeholder="До" class="field__text" numeric step="0.1" inputmode="numeric" digitOnly maxlength="6" formControlName="resultInput" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Период</label>
+                        <div class="field__price-group">
+                            <input type="text" placeholder="От" class="field__text js-date-from" readonly>
+                            <input type="text" placeholder="До" class="field__text js-date-to" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="company-name">Заказчик</label>
+                        <input type="text" class="field__text" id="company-name" placeholder="Название или ИНН">
+                    </div>
+                </div>
+
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="source">Источник</label>
+                        <select name="source" id="source" class="field__select js-select" data-placeholder="Выберите источник">
+                            <option></option>
+                            <option value="xarid">xarid.uzex.uz</option>
+                            <option value="etender">etender.uzex.uz</option>
+                            <option value="xt-xarid">xt-xarid.uz</option>
+                            <option value="tender">tender.mc.uz</option>
+                            <option value="Beeline">Beeline</option>
+                        </select>
+                    </div>
+                </div>
+
+            </form>
+        </aside>
+    
+        <main class="js-more-wrap">
+            <section class="section-tenders">
+                <div class="tenders">
+                    <div class="tenders__list">
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tender-item">
+                            <a href="tender.html" class="tender-item__link"></a>
+                            <div class="tender-item__info">
+                                <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                <div class="tender-item__meta">
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Тип:</div>
+                                        <div class="tender-item__meta-info">Аукцион</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Завершится:</div>
+                                        <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                    </div>
+
+                                    <div class="tender-item__meta-item">
+                                        <div class="tender-item__meta-title">Страна:</div>
+                                        <div class="tender-item__meta-info">Узбекистан</div>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price-mobile">
+                                    12,739,356,000 UZS
+                                </div>
+                                <div class="tender-item__url">
+                                    <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                </div>
+                            </div>
+                            <div class="tender-item__price">
+                                12,739,356,000 UZS
+                                <div>Сумма контракта</div>
+                            </div>
+                            <div class="tender-item__favorite">
+                                <button class="btn btn-favorite js-add-favorite"></button>
+                            </div>
+                        </div>
+                        <div class="tenders-loaded-more js-more js-more-last">
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                            <div class="tender-item">
+                                <a href="tender.html" class="tender-item__link"></a>
+                                <div class="tender-item__info">
+                                    <div class="tender-item__company">АО OLMALIQ KON-METALLURGIYA KOMBINATI</div>
+                                    <div class="tender-item__title">Организация питания в объекте Рудоуправление «Ангрен» </div>
+                                    <div class="tender-item__meta">
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Тип:</div>
+                                            <div class="tender-item__meta-info">Аукцион</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Завершится:</div>
+                                            <div class="tender-item__meta-info">07.04.2022 в 16:14</div>
+                                        </div>
+
+                                        <div class="tender-item__meta-item">
+                                            <div class="tender-item__meta-title">Страна:</div>
+                                            <div class="tender-item__meta-info">Узбекистан</div>
+                                        </div>
+                                    </div>
+                                    <div class="tender-item__price-mobile">
+                                        12,739,356,000 UZS
+                                    </div>
+                                    <div class="tender-item__url">
+                                        <a href="https://tenderweek.com" target="_blank">tenderweek.com</a>
+                                    </div>
+                                </div>
+                                <div class="tender-item__price">
+                                    12,739,356,000 UZS
+                                    <div>Сумма контракта</div>
+                                </div>
+                                <div class="tender-item__favorite">
+                                    <button class="btn btn-favorite js-add-favorite"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="paggination">-->
+<!--                    <ul>-->
+<!--                        <li><a href="#" class="paggination__link is-arrow-paggination"><span class="icon icon-arrow-left"></span></a></li>-->
+<!--                        <li><a href="serp-logged.html" class="paggination__link is-selected">1</a></li>-->
+<!--                        <li><a href="serp-logged_2.html" class="paggination__link">2</a></li>-->
+<!--                        <li><a href="serp-logged_3.html" class="paggination__link">3</a></li>-->
+<!--                        <li><a href="serp-logged_4.html" class="paggination__link">4</a></li>-->
+<!--                        <li><a href="serp-logged_5.html" class="paggination__link">5</a></li>-->
+<!--                        <li><span class="paggination__link is-dots">...</span></li>-->
+<!--                        <li><a href="#" class="paggination__link">21</a></li>-->
+<!--                        <li><a href="serp-logged_2.html" class="paggination__link is-arrow-paggination"><span class="icon icon-arrow-right"></span></a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+            </section>
+        </main>
+    
+    </div>
+    
+
+    <footer class="inner-footer">
+        <div class="footer">
+            <div class="footer__links">
+                <a href="policy.html">Пользовательское соглашение</a>
+                <a href="agreement.html">Политика конфиденциальности и условия использования</a>
+            </div>
+            <div class="footer__contact">
+                <a href="https://t.me/TenderAsiaSupport" target="_blank" class="btn btn-gray">
+                    <span class="icon icon-telegram"></span>
+                    Написать в Telegram
+                </a>
+                <a href="mailto:contact@tender.asia" class="btn btn-gray btn--w-icon">
+                    <span class="icon icon-mail"></span>
+                    Написать на почту
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="mobile-sidebar">
+        <a href="serp-logged.html" class="is-selected">
+            <span class="icon icon-s-search icon--no-selected"></span>
+            <span class="icon icon-s-search-blue icon--selected"></span>
+            Поиск
+        </a>
+
+        <a href="favorite.html">
+            <span class="icon icon-s-star icon--no-selected"></span>
+            <span class="icon icon-star-blue icon--selected"></span>
+            Избранное
+        </a>
+
+        <a href="saved-searches.html">
+            <span class="icon icon-s-template icon--no-selected"></span>
+            <span class="icon icon-s-template-blue icon--selected"></span>
+            Шаблоны
+        </a>
+
+        <a href="profile.html">
+            <span class="icon icon-s-profile icon--no-selected"></span>
+            <span class="icon icon-s-profile-blue icon--selected"></span>
+            Профиль
+        </a>
+    </div>
+
+    <div class="site-messages js-site-msgs">
+        <div class="site-message-item">
+            <span>Поиск добавлен в «Шаблоны»</span>
+            <a href="#" class="js-close-site-message site-message-item__close">
+                <span class="icon icon-close"></span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="popup popup--small js-popup is-filter-popup" data-popup-id="filter">
+        <a href="#" class="popup__close js-popup-close"><span class="icon icon-close"></span></a>
+        <div class="popup__title">Фильтры</div>
+        <div class="popup__content">        
+            <form class="filter-form">
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="pcountry">Страна</label>
+                        <select name="country" id="pcountry" class="field__select js-select" data-placeholder="Выберите страну">
+                            <option></option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="pregion">Регион</label>
+                        <select name="country" id="pregion" class="field__select js-select" data-placeholder="Выберите регион">
+                            <option></option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                            <option value="Узбекистан">Узбекистан</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <div class="field__label">Тип конкурса</div>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="1">
+                            Открытый 
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="2">
+                            С ограниченным участием
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="3">
+                            Аукцион
+                        </label>
+                        <label class="field__radio">
+                            <input type="radio" name="type-concurs" value="4">
+                            Запрос котировок
+                        </label>
+                    </div>
+                </div>
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Сумма (UZS)</label>
+                        <div class="field__price-group">
+                            <input type="number" placeholder="От" class="field__text" numeric step="0.1" inputmode="numeric" digitOnly maxlength="6" formControlName="resultInput" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                            <input type="number" placeholder="До" class="field__text" numeric step="0.1" inputmode="numeric" digitOnly maxlength="6" formControlName="resultInput" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');">
+                        </div>
+                    </div>
+                </div>
+                <div class="field-group is-price-group js-group-fields" data-group="1">
+                    <div class="field">
+                        <label>Период</label>
+                        <div class="field__price-group">
+                            <input type="text" placeholder="От" class="field__text js-date-from" readonly>
+                            <input type="text" placeholder="До" class="field__text js-date-to" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="company-name">Заказчик</label>
+                        <input type="text" class="field__text" id="company-name" placeholder="Название или ИНН">
+                    </div>
+                </div>
+                <div class="field-group" data-group="1">
+                    <div class="field">
+                        <label for="fsource">Источник</label>
+                        <select name="fsource" id="fsource" class="field__select js-select" data-placeholder="Выберите источник">
+                            <option></option>
+                            <option value="xarid">xarid.uzex.uz</option>
+                            <option value="etender">etender.uzex.uz</option>
+                            <option value="xt-xarid">xt-xarid.uz</option>
+                            <option value="tender">tender.mc.uz</option>
+                            <option value="Beeline">Beeline</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="popup__btns is-compact">
+            <a href="#" class="btn btn-white js-popup-filter-reset">Сбросить</a>
+            <a href="#" class="btn btn-blue js-popup-close">Показать</a>
+        </div>
+        
+    </div>
+
+    <div class="popup-overlay js-popup-close"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/main.js?v10"></script>
+</body>
+</html>

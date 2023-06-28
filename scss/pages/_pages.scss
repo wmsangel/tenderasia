@@ -1,0 +1,222 @@
+.inner-page {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 160px);
+
+    .sidebar {
+        padding: 18px 24px;
+        width: 330px;
+        height: calc(100vh - 81px);
+        overflow-y: auto;
+        border-right: 1px solid #EFEFF0;
+        background: #fff;
+
+        .btn {
+            width: 100%;
+
+            &+.btn {
+                margin-top: 16px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            width: 100%;
+            height: auto;
+            border-right: 0;
+        }
+
+        @media (max-width: 767px) {
+
+            &:not(.sidebar--mobile-visible) {
+                display: none;
+            }
+
+            &.is-opened {
+                z-index: 9999;
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                overflow-y: auto;
+
+                .save-search-btn {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    main {
+        padding: 24px 24px;
+        width: calc(100% - 330px);
+        height: calc(100vh - 160px);
+        overflow-y: auto;
+
+        @media (max-width: 992px) {
+            &:not(.js-more-wrap) {
+                height: auto;
+                overflow-y: hidden;
+            }
+            width: 100%;
+            padding: 0;
+
+            .tender-item:first-child .tender-item__remove {
+                top: -8px;
+            }
+
+            .tenders {
+                margin: 0;
+            }
+            .tenders__list {
+                padding: 16px 0 24px 0;
+            }
+
+            .btn-favorite {
+                width: 40px;
+                height: 40px;
+                padding: 0;
+            }
+
+            .tender-item__favorite {
+                width: 40px;
+            }
+        }
+    }
+
+    .tenders {
+        filter: none;
+    }
+}
+
+.sidebar-wo-footer {
+    footer {
+        display: none;
+    }
+    main {
+        height: calc(100vh - 81px);
+        @media (max-width: 992px) {
+            height: auto;
+        }
+    }
+}
+
+
+
+/********************************************************* User profile info */
+.user-profile-info {
+    border-bottom: 1px solid #EFEFF0;
+    padding: 24px 0;
+
+    &__name {
+        font-weight: 400;
+        font-size: 14px;
+        color: #9E9BA1;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    &__value {
+        font-weight: 500;
+        font-size: 18px;
+        color: #3C3744;
+        margin-bottom: 2px;
+    }
+
+    &__id {
+        font-weight: 400;
+        font-size: 14px;
+        color: #9E9BA1;
+    }
+}
+
+
+
+/********************************************************* Реквизиты */
+.recvisit {
+    &__title {
+        color: #9E9BA1;
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 4px;
+    }
+
+    &__name {
+        color: #3C3744;
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    &__info {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 24px;
+    }
+
+    &__address {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+.content-page__content-text {
+    padding: 24px 0 0;
+    max-width: 630px;
+
+    p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #3C3744;
+        margin: 16px 0 24px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: 18px;
+        color: #3C3744;
+        margin: 0 0 16px;
+        padding: 0;
+    }
+
+    a {
+        color: #3185FC;
+        text-decoration: underline;
+    }
+}
+
+
+
+body {
+    &.is-page-agreement {
+        .sidebar {
+            height: calc(100vh - 160px);
+        }
+        @media (max-width: 767px) {
+            .sidebar {
+                height: auto;
+                display: flex !important;
+                padding-left: 16px;
+                padding-right: 16px;
+                order: 2;
+                border-top: 1px solid #EFEFF0;
+            }
+            footer {
+                padding-top: 24px;
+                padding-left: 16px;
+                padding-right: 16px;
+                display: flex !important;
+            }
+            .footer__contact {
+                margin-top: 24px;
+            }
+        }
+    }
+}

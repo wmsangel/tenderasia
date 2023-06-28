@@ -1,0 +1,47 @@
+.paggination {
+    width: 100%;
+    padding: 0 24px 24px 24px;
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    ul {
+        border-top: 1px solid #EFEFF0;
+        list-style: none;
+        margin: 0;
+        padding: 24px 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+    }   
+
+    &__link {
+        border: 1px solid transparent;
+        background: #fff;
+        border-radius: 4px;
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+
+        &.is-dots {
+            color: #9E9BA1;
+        }
+
+        &.is-selected {
+            color: $color_blue;
+            border-color: $color_blue;
+        }
+
+        &:hover:not(.is-dots) {
+            color: $color_blue;
+        }
+    }
+
+    @media (max-width: 992px) {
+        padding: 0 0 16px 0;
+        ul {
+            justify-content: center;
+        }
+    }
+}

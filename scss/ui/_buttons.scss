@@ -1,0 +1,151 @@
+.more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    &[disabled] {
+        opacity: .3;
+    }
+
+    .icon.icon-telegram {
+        margin-right: 4px;
+    }
+
+    &.btn-blue {
+        background: $color_blue;
+        border: 1px solid $color_blue;
+        color: #fff;
+        border-radius: 6px;
+        padding: 12px 24px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background: lighten($color_blue, 5%);
+        }
+    }
+
+    &.btn-blue-gradient {
+        background: linear-gradient(91.05deg, #0DB5FD -3.91%, #0D50FD 103.74%);
+        box-shadow: 0px 4px 40px rgba(49, 133, 252, 0.4);
+        color: #fff;
+        border-radius: 6px;
+        padding: 12px 24px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            box-shadow: 0px 4px 50px rgba(49, 133, 252, 0.4);
+            background: linear-gradient(81.05deg, #0DB5FD -3.91%, #0D50FD 103.74%);
+        }
+    }
+
+    &.btn-white {
+        padding: 12px 24px;
+        border: 1px solid #E0DFE1;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 14px;
+        background: #fff;
+    }
+
+    &.btn-favorite {
+        background: url('../img/icons/star.svg') #eaf3ff no-repeat center;
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        transition: all .2s ease-in-out;
+
+        &.is-selected {
+            background: url('../img/icons/star-filled.svg') #eaf3ff no-repeat center;
+        }
+
+        &:hover {
+            background-color: #D0E1F9;
+        }
+
+        @media (max-width: 992px) {
+            background-color: transparent !important;
+        }
+    }
+
+    &.btn-remove {
+        background: url('../img/icons/remove.svg') #f5f5f5 no-repeat center;
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        transition: all .2s ease-in-out;
+
+        &.is-selected {
+            background: url('../img/icons/star-filled.svg') #eaf3ff no-repeat center;
+        }
+
+        &:hover {
+            background-color: #efefef;
+        }
+
+        @media (max-width: 992px) {
+            background-color: transparent !important;
+        }
+    }
+
+    &.btn-gray {
+        background: #FFFFFF;
+        border: 1px solid #E0DFE1;
+        border-radius: 6px;
+        padding: 12px 24px;
+        font-weight: 600;
+        font-size: 14px;
+        justify-content: center;
+    }
+
+    &.btn-telegram {
+        border: 1px solid #3C3744;
+    }
+
+    &.btn-clean {
+        padding: 12px 24px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    &--w-icon {
+        .icon {
+            margin-right: 4px;
+        }
+    }
+
+    &.btn-telegram {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    &[disabled] {
+        opacity: .5;
+        pointer-events: none;
+    }
+}
+
+.c-link {
+    color: $color_blue;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+}
